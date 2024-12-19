@@ -21,8 +21,10 @@ const app = express();
 connect();
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://new-delhices.netlify.app/"],
+    origin: process.env.FONTEND,
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // specify allowed HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization"], // specify allowed headers if needed
   })
 );
 
@@ -47,7 +49,7 @@ app.use("/api/sauce", sauceRoute);
 app.use("/api/nansauce", nanSauceRoute);
 app.use("/api/drinkNFries", drinkNFriesRoute);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 async function initializeConfig() {
   const configExists = await TableConfig.findOne();

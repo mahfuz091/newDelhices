@@ -1,0 +1,19 @@
+@media (max-width: 1366px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 991px) {
+  .checkoutContainer .shipping-btns {
+    flex-direction: column;
+  }
+}
+@media (max-width: 575px) {
+  .spice-and-tradition .spice-right h3,
+  .innovation-left h3 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  .innovation .container .inner {
+    padding: 40px;
+  }
+}
