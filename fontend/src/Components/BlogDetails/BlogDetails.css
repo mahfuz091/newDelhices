@@ -1,0 +1,26 @@
+.blog-details {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.blog-image {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  max-height: 450px;
+  object-fit: cover;
+}
+
+.blog-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.blog-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+}

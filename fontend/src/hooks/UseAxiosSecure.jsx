@@ -1,18 +1,21 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useRootContext } from "../Provider/Context";
+import { useNavigate } from "react-router-dom";
 
 const axiosSecure = axios.create({
   baseURL: import.meta.env.VITE_API,
+  // baseURL: "https://new-delhices-backend.vercel.app/",
   withCredentials: true,
 });
 
 const UseAxiosSecure = () => {
-  const { toggleSignIn } = useRootContext();
   useEffect(() => {
     axiosSecure.interceptors.response.use(
       (response) => response,
       async (error) => {
+        console.log(error.response.status);
+
         if (
           error.response &&
           (error.response.status === 401 ||
@@ -22,7 +25,6 @@ const UseAxiosSecure = () => {
         ) {
           // Handle unauthorized access
           console.log("Unauthorized, possibly log out or refresh token here");
-          toggleSignIn();
         }
         return Promise.reject(error);
       }

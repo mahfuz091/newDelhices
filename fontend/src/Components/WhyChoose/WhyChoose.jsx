@@ -15,10 +15,10 @@ const WhyChoose = () => {
                 <div className='choose-img'>
                   <img src={shoppingBag} alt='img' />
                 </div>
-                <h4 className='sec-title__two'>Ease of ordering</h4>
+                <h4 className='sec-title__two'>Facilité de commande</h4>
                 <p className='card-desc'>
-                  Here&apos;s your chance to discover India&apos;s rich culinary
-                  heritage.
+                  Issu des meilleurs ingrédients, ce plat a un goût
+                  exceptionnel.
                 </p>
               </div>
             </div>
@@ -29,10 +29,10 @@ const WhyChoose = () => {
                 <div className='choose-img'>
                   <img src={medal} alt='img' />
                 </div>
-                <h4 className='sec-title__two'>Best quality</h4>
+                <h4 className='sec-title__two'>Meilleure qualité</h4>
                 <p className='card-desc'>
-                  From the finest ingredients, this dish has an exceptional
-                  taste.
+                  À partir des meilleurs ingrédients, ce plat a un goût
+                  exceptionnel.
                 </p>
               </div>
             </div>
@@ -43,10 +43,10 @@ const WhyChoose = () => {
                 <div className='choose-img'>
                   <img src={delivery} alt='img' />
                 </div>
-                <h4 className='sec-title__two'>Fast delivery</h4>
+                <h4 className='sec-title__two'>Traitement rapide</h4>
                 <p className='card-desc'>
-                  Here&apos;s your chance to discover India&apos;s rich culinary
-                  heritage.
+                  Issu des meilleurs ingrédients, ce plat a un goût
+                  exceptionnel.
                 </p>
               </div>
             </div>

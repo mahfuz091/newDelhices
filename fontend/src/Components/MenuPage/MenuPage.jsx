@@ -10,7 +10,7 @@ const MenuPage = () => {
     <Layout>
       <Helmet>
         <meta charSet='utf-8' />
-        <title>The Map - New Dehices</title>
+        <title>The Map - New Delhices</title>
       </Helmet>
       <Category />
     </Layout>

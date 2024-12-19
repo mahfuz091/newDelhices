@@ -1,10 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRootContext } from "../../Provider/Context";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.svg";
+import useAxiosPublic from "../../hooks/UseAxiosPublic";
+import { TbLogin2 } from "react-icons/tb";
 
 const MobileNav = () => {
-  const { isExpanded, handleToggle } = useRootContext();
+  const {
+    isExpanded,
+    handleToggle,
+    control,
+    setControl,
+    user,
+    setUser,
+    toggleSignIn,
+    setShowSignUp,
+  } = useRootContext();
+  const axiosPublic = useAxiosPublic();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Get the JWT token from cookies
+    const user = localStorage.getItem("user");
+
+    if (user) {
+      setIsAuthenticated(true);
+    }
+  }, [control]);
+
+  // Logout function to remove JWT and reset authentication state
+  const handleLogout = async () => {
+    try {
+      const res = await axiosPublic.post(
+        "api/users/logout",
+        {},
+        {
+          withCredentials: true,
+        }
+      );
+
+      if (res.status === 200) {
+        setIsAuthenticated(false);
+        setControl(!control);
+        localStorage.removeItem("user");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    setIsAuthenticated(false); // Update state to reflect logged out status
+  };
+
   return (
     <div className={`mobile-nav__wrapper ${isExpanded ? "expanded" : ""}`}>
       <div
@@ -58,6 +103,27 @@ const MobileNav = () => {
             </NavLink>
           </li>
         </ul>
+        {!user ? (
+          <button
+            className='thm-btn main-header__btn'
+            onClick={() => {
+              toggleSignIn();
+              setShowSignUp(false);
+              handleToggle();
+            }}
+          >
+            <b>
+              <TbLogin2 />
+              Login
+            </b>
+            <span></span>
+          </button>
+        ) : (
+          <button className='thm-btn main-header__btn' onClick={handleLogout}>
+            <b>Logout</b>
+            <span></span>
+          </button>
+        )}
       </div>
     </div>
   );

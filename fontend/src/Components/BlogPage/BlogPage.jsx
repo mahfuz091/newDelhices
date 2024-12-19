@@ -8,7 +8,7 @@ const BlogPage = () => {
     <Layout>
       <Helmet>
         <meta charSet='utf-8' />
-        <title>Blog - New Dehices</title>
+        <title>Blog - New Delhices</title>
       </Helmet>
       <Blog />
     </Layout>

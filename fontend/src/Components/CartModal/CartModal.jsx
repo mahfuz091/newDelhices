@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRootContext } from "../../Provider/Context";
 import time from "../../assets/images/time.svg";
 import deleteIcon from "../../assets/images/delete-light.png";
+import { Link } from "react-router-dom";
 const CartModal = () => {
   const {
     showCart,
@@ -41,12 +42,14 @@ const CartModal = () => {
       <div className='cart-popup__content'>
         <div className='delivery-cart'>
           <div className='toggle-label'>
-            <span className='label-left'>Delivery</span>
+            <span className='label-left d-none'>Delivery</span>
             <div
-              className={`toggle-container ${!clickNcollect ? "" : "active"}`}
+              className={`toggle-container d-none ${
+                !clickNcollect ? "" : "active"
+              }`}
               onClick={handleDeliveryToggle}
             >
-              <div className='toggle-slider'></div>
+              <div className='toggle-slider d-none'></div>
             </div>
             <span className='label-right'>Click & Collect</span>
           </div>
@@ -117,9 +120,9 @@ const CartModal = () => {
             <p>Total</p>
             <p>${subtotal}</p>
           </div>
-          <button className='thm-btn w-100'>
-            <b>Checkout</b> <span></span>
-          </button>
+          <Link to='/checkout' onClick={toggleCart} className='thm-btn w-100'>
+            <b>Vérifier</b> <span></span>
+          </Link>
         </div>
       </div>
     </div>

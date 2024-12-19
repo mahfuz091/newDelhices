@@ -47,7 +47,7 @@ const Footer = ({ SignIn }) => {
               data-aos-duration='1600'
               data-aos-delay='100'
             >
-              <h2 className='footer-widget__title'>Quick Link</h2>
+              <h2 className='footer-widget__title'>Lien rapide</h2>
               <ul className='list-unstyled footer-widget__links'>
                 {about.map(({ id, title, href }) => (
                   <li key={id}>
@@ -64,7 +64,7 @@ const Footer = ({ SignIn }) => {
               data-aos-duration='1700'
               data-aos-delay='200'
             >
-              <h2 className='footer-widget__title'>Address</h2>
+              <h2 className='footer-widget__title'>Adresse</h2>
               <ul className='footer-widget__info list-unstyled'>
                 <li>
                   <div className='footer-widget__info--icon'>
@@ -72,7 +72,7 @@ const Footer = ({ SignIn }) => {
                   </div>
                   <div>
                     <a href='tel:09969569535'>
-                      <span>Phone Number:</span> <br /> 099 695 695 35
+                      <span>Numéro de téléphone:</span> <br /> 099 695 695 35
                     </a>
                   </div>
                 </li>
@@ -81,7 +81,7 @@ const Footer = ({ SignIn }) => {
                     <i className='fas fa-location-dot'></i>
                   </div>
                   <div>
-                    <span>Address:</span> <br />
+                    <span>Adresse:</span> <br />
                     8 RUE DES PERRIERES <br />
                     21000 DIJON
                   </div>
@@ -96,7 +96,9 @@ const Footer = ({ SignIn }) => {
               data-aos-duration='1800'
               data-aos-delay='300'
             >
-              <h2 className='footer-widget__title'>Open Hours</h2>
+              <h2 className='footer-widget__title'>
+                Horaires d&apos;ouverture
+              </h2>
               <ul className='footer-widget__info list-unstyled'>
                 <li>
                   <div>Monday to Sunday 11:00-23:00</div>
@@ -106,6 +108,11 @@ const Footer = ({ SignIn }) => {
           </Col>
         </Row>
       </Container>
+      <div className='copyright'>
+        <Container>
+          <p>Copyright ©2024 NEW DELHICES All right reserved.</p>
+        </Container>
+      </div>
     </footer>
   );
 };

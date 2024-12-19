@@ -1,0 +1,82 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Heading Styling */
+.dash-add__blog h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Form Group Styling */
+.dash-add__blog .form-group {
+  margin-bottom: 15px;
+}
+
+.dash-add__blog label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.dash-add__blog input[type="text"],
+.dash-add__blog input[type="file"],
+.dash-add__blog select,
+.dash-add__blog textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.dash-add__blog input:focus,
+.dash-add__blog textarea:focus,
+.dash-add__blog select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.dash-add__blog textarea {
+  resize: none;
+}
+
+/* Button Styling */
+.dash-add__blog .form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.dash-add__blog button {
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dash-add__blog .save-btn {
+  background: var(--Secendary, #c86011);
+  color: #fff;
+}
+
+.dash-add__blog .save-btn:hover {
+  background-color: #218838;
+}
+
+.dash-add__blog .discard-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.dash-add__blog .discard-btn:hover {
+  background-color: #c82333;
+}

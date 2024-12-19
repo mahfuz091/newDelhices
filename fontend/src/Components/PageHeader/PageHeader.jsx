@@ -11,7 +11,7 @@ const PageHeader = ({ subTitle, title }) => {
             <div className='page-header__content'>
               <ul className='tolak-breadcrumb list-unstyled'>
                 <li>
-                  <Link href='/'>Home</Link>
+                  <Link to='/'>Maison</Link>
                 </li>
                 <li>
                   <span>{subTitle}</span>

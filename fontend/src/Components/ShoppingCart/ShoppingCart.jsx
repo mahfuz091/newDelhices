@@ -191,7 +191,7 @@ const ShoppingCart = () => {
                 <p>${total}</p>
               </div>
               <button className='thm-btn w-100'>
-                <b>Checkout</b> <span></span>
+                <b>Vérifier</b> <span></span>
               </button>
             </div>
           </Col>

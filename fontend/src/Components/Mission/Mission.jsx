@@ -7,7 +7,9 @@ const Mission = () => {
   return (
     <section className='mission'>
       <Container>
-        <h2 className='section-title text-center'>Our Mission & Vision</h2>
+        <h2 className='section-title text-center'>
+          Notre mission et notre vision
+        </h2>
         <Row className='g-50'>
           <Col lg={6}>
             <Row className='mission-images'>
@@ -34,29 +36,31 @@ const Mission = () => {
                     <Accordion.Body>
                       <div className='inner'>
                         <p>
-                          At New Delhies, our mission is to create exceptional
-                          dining experiences by offering high-quality, fresh,
-                          and flavorful dishes that celebrate the best
-                          ingredients. We are committed to:
+                          Chez New Delhies, notre mission est de créer des
+                          expériences culinaires exceptionnelles en proposant
+                          des plats de haute qualité, frais et savoureux qui
+                          célèbrent les meilleurs ingrédients. Nous nous
+                          engageons à:
                         </p>
                         <ul>
                           <li>
-                            Providing a welcoming and comfortable atmosphere
-                            where guests can enjoy memorable meals with family
-                            and friends.
+                            Offrant une atmosphère accueillante et confortable
+                            où les invités peuvent profiter de repas mémorables
+                            en famille et entre amis.
                           </li>
                           <li>
-                            Delivering excellent service that reflects our
-                            passion for hospitality and attention to detail.
+                            Offrir un excellent service qui reflète notre
+                            passion pour l’hospitalité et le souci du détail.
                           </li>
                           <li>
-                            Supporting local farmers and suppliers by sourcing
-                            sustainable, seasonal, and organic ingredients
-                            whenever possible.
+                            Soutenir les agriculteurs et les fournisseurs locaux
+                            en s&apos;approvisionnant dans la mesure du possible
+                            en ingrédients durables, de saison et biologiques.
                           </li>
                           <li>
-                            Continuously innovating our menu to bring exciting
-                            and diverse culinary experiences to our guests.
+                            Nous innovons continuellement notre menu pour offrir
+                            des expériences culinaires passionnantes et variées
+                            à nos clients.
                           </li>
                         </ul>
                       </div>
@@ -70,29 +74,31 @@ const Mission = () => {
                     <Accordion.Body>
                       <div className='inner'>
                         <p>
-                          At New Delhies, our mission is to create exceptional
-                          dining experiences by offering high-quality, fresh,
-                          and flavorful dishes that celebrate the best
-                          ingredients. We are committed to:
+                          Chez New Delhies, notre mission est de créer des
+                          expériences culinaires exceptionnelles en proposant
+                          des plats de haute qualité, frais et savoureux qui
+                          célèbrent les meilleurs ingrédients. Nous nous
+                          engageons à:
                         </p>
                         <ul>
                           <li>
-                            Providing a welcoming and comfortable atmosphere
-                            where guests can enjoy memorable meals with family
-                            and friends.
+                            Offrant une atmosphère accueillante et confortable
+                            où les invités peuvent profiter de repas mémorables
+                            en famille et entre amis.
                           </li>
                           <li>
-                            Delivering excellent service that reflects our
-                            passion for hospitality and attention to detail.
+                            Offrir un excellent service qui reflète notre
+                            passion pour l’hospitalité et le souci du détail.
                           </li>
                           <li>
-                            Supporting local farmers and suppliers by sourcing
-                            sustainable, seasonal, and organic ingredients
-                            whenever possible.
+                            Soutenir les agriculteurs et les fournisseurs locaux
+                            en s&apos;approvisionnant dans la mesure du possible
+                            en ingrédients durables, de saison et biologiques.
                           </li>
                           <li>
-                            Continuously innovating our menu to bring exciting
-                            and diverse culinary experiences to our guests.
+                            Nous innovons continuellement notre menu pour offrir
+                            des expériences culinaires passionnantes et variées
+                            à nos clients.
                           </li>
                         </ul>
                       </div>

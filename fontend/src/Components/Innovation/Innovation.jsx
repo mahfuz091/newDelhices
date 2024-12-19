@@ -8,25 +8,25 @@ const Innovation = () => {
     <section className='innovation'>
       <Container>
         <div className='inner'>
-          <Row className='gy-20'>
-            <Col md={6}>
+          <Row className='gy-30'>
+            <Col lg={6}>
               <div className='innovation-left'>
                 <h3>
-                  Culinary Ingenuity: <br /> Blending Tradition with <br />{" "}
-                  <span>Innovation</span>
+                  Ingéniosité culinaire : <br /> Mélange de tradition et
+                  <br /> <span>Innovation</span>
                 </h3>
                 <p>
-                  Indian cuisine offers a rich and diverse array of flavors,
-                  textures, and spices. Are you interested in exploring
-                  traditional recipes
+                  La cuisine indienne offre une gamme riche et diversifiée de
+                  saveurs, de textures et d&apos;épices. Vous souhaitez
+                  découvrir des recettes traditionnelles
                 </p>
-                <Link to='' className='thm-btn'>
-                  <b>To Start</b>
+                <Link to='menu' className='thm-btn mt-3'>
+                  <b>Pour commencer</b>
                   <span></span>
                 </Link>
               </div>
             </Col>
-            <Col md={6}>
+            <Col lg={6}>
               <img className='img-fluid' src={image} alt='' />
             </Col>
           </Row>

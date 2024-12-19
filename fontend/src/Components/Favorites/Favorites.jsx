@@ -1,65 +1,46 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import image1 from "../../assets/images/01.png";
-import image2 from "../../assets/images/02.png";
-import image3 from "../../assets/images/03.png";
-import image4 from "../../assets/images/04.png";
-
-const data = [
-  {
-    id: 1,
-    image: image1,
-    title: "Cheese Nan",
-    des: "It is a layered dish of fragrant basmati rice, tender marinated chicken.",
-    price: 14.9,
-  },
-  {
-    id: 2,
-    image: image2,
-    title: "Cheese Nan",
-    des: "It is a layered dish of fragrant basmati rice, tender marinated chicken.",
-    price: 14.9,
-  },
-  {
-    id: 3,
-    image: image3,
-    title: "Cheese Nan",
-    des: "It is a layered dish of fragrant basmati rice, tender marinated chicken.",
-    price: 14.9,
-  },
-  {
-    id: 4,
-    image: image4,
-    title: "Cheese Nan",
-    des: "It is a layered dish of fragrant basmati rice, tender marinated chicken.",
-    price: 14.9,
-  },
-];
+import { useRootContext } from "../../Provider/Context";
+import { Link } from "react-router-dom";
 
 const Favorites = () => {
+  const { tabContents } = useRootContext();
+  const getRandomItems = (arr, count) => {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
+
+  const randomTabContents = getRandomItems(tabContents, 8);
   return (
     <section className='favorites'>
       <Container>
         <h3 className='section-title'>
-          Fan Favorites: <br />
-          Delightful Dishes from Our Kitchen
+          Les favoris des fans: <br />
+          Plats délicieux de notre cuisine
         </h3>
         <p className='sec-description'>
-          Enjoy the Flavors Most Appreciated by Our Customers
+          Profitez des saveurs les plus appréciées par nos clients
         </p>
 
         <div className='favorite-cards'>
-          <Row>
-            {data.map(({ id, image, title, des, price }) => (
-              <Col lg={3} key={id}>
+          <Row className='gy-20'>
+            {randomTabContents?.map(({ id, image, name, details, price }) => (
+              <Col md={6} lg={4} xl={3} key={id}>
                 <div className='favorite-card'>
                   <div className='image'>
-                    <img className='img-fluid' src={image} alt='' />
+                    <img
+                      className='img-fluid'
+                      src={
+                        new URL(`../../assets/images/${image}`, import.meta.url)
+                          .href
+                      }
+                      alt=''
+                    />
                   </div>
                   <div className='content'>
-                    <h5>{title}</h5>
-                    <p>{des}</p>
-                    <p className='price'>${price}</p>
+                    <h5>{name}</h5>
+                    <p>{details}</p>
+                    <p className='price'>{price} €</p>
                   </div>
                 </div>
               </Col>
@@ -67,9 +48,9 @@ const Favorites = () => {
           </Row>
         </div>
         <div className='text-center mt-5'>
-          <button className='thm-btn'>
-            <b>See All Food</b> <span></span>
-          </button>
+          <Link to='menu' className='thm-btn'>
+            <b>Voir tous les aliments</b> <span></span>
+          </Link>
         </div>
       </Container>
     </section>

@@ -10,7 +10,7 @@ const ReservationPage = () => {
     <Layout>
       <Helmet>
         <meta charSet='utf-8' />
-        <title>Reservation - New Dehices</title>
+        <title>Reservation - New Delhices</title>
       </Helmet>
       <Reservation />
     </Layout>

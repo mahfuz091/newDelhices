@@ -1,0 +1,17 @@
+.floating-image {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  z-index: 1000;
+  pointer-events: none;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.tab-card {
+  cursor: pointer;
+}
+
+.opacity-25 {
+  opacity: 0.25;
+}

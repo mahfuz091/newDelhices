@@ -60,7 +60,7 @@ const footerData = {
   infos,
 
   widgetText:
-    "Our job is to filling your tummy with delicious food and  with fast and free delivery.",
+    "Notre travail est de remplir votre ventre de nourriture délicieuse et avec une livraison rapide et gratuite.",
   widgetInfo: {
     location: "8 RUE DES PERRIERES 21000 DIJON",
     locationIcon: "icofont-location-pin",
@@ -70,7 +70,7 @@ const footerData = {
   },
   widgetSocial,
   about: [
-    { id: 1, href: "/", title: "Home" },
+    { id: 1, href: "/", title: "Maison" },
     { id: 2, href: "/", title: "Menu" },
     { id: 3, href: "/", title: "Services" },
     { id: 4, href: "/", title: "Contact" },

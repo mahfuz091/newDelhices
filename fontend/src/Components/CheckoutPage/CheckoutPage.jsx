@@ -9,7 +9,7 @@ const CheckoutPage = () => {
     <Layout>
       <Helmet>
         <meta charSet='utf-8' />
-        <title>Checkout - New Dehices</title>
+        <title>Vérifier - New Delhices</title>
       </Helmet>
       <Checkout />
     </Layout>

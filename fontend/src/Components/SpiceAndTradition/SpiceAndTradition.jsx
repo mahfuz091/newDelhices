@@ -8,23 +8,23 @@ const SpiceAndTradition = () => {
     <section className='spice-and-tradition'>
       <Container>
         <div className='inner'>
-          <Row>
-            <Col md={4}>
-              <img className='img-fluid' src={image} alt='image' />
+          <Row className='gy-20'>
+            <Col lg={4} className='text-center'>
+              <img className='spice-img' src={image} alt='image' />
             </Col>
-            <Col md={8}>
+            <Col lg={8}>
               <div className='spice-right'>
                 <h3>
-                  Taste India A Journey <br /> Through{" "}
-                  <span>Spice and Tradition</span>
+                  Goûtez l&apos;Inde Un voyage à travers{" "}
+                  <span>les épices et la tradition</span>
                 </h3>
                 <p>
-                  Indian cuisine offers a rich and diverse array of flavors,
-                  textures, and spices. Are you interested in exploring
-                  traditional recipes
+                  La cuisine indienne offre une gamme riche et diversifiée de
+                  saveurs, de textures et d&apos;épices. Vous souhaitez
+                  découvrir des recettes traditionnelles
                 </p>
-                <Link to='' className='thm-btn'>
-                  <b>Order Now</b> <span></span>
+                <Link to='menu' className='thm-btn mt-3'>
+                  <b>Commandez maintenant</b> <span></span>
                 </Link>
               </div>
             </Col>

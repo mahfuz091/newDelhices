@@ -8,6 +8,8 @@ import CartModal from "../CartModal/CartModal";
 import SignIn from "../SignIn/SignIn";
 import SignUp from "../SignUp/SignUp";
 import MobileNav from "../MobileNav/MobileNav";
+import GoogleTranslate from "../GoogleTranslate/GoogleTranslate";
+import ShoppingModal from "../ShoppingModal/ShoppingModal";
 
 const Layout = ({ children }) => {
   useEffect(() => {
@@ -59,6 +61,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div className='page-wrapper'>
+        {/* <GoogleTranslate /> */}
         <Header />
         {children}
         <Footer />
@@ -66,6 +69,7 @@ const Layout = ({ children }) => {
       <CartModal />
       <SignIn />
       <MobileNav />
+      <ShoppingModal />
     </>
   );
 };

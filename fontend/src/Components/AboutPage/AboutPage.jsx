@@ -13,11 +13,11 @@ const AboutPage = () => {
     <Layout>
       <Helmet>
         <meta charSet='utf-8' />
-        <title>About - New Dehices</title>
+        <title>About - New Delhices</title>
       </Helmet>
       <PageHeader
-        subTitle='About Us'
-        title='Passion for Food, Commitment to Quality'
+        subTitle='À propos de nous'
+        title='Passion pour la nourriture, engagement pour la qualité'
       />
       <WhyChoose />
       <Mission />

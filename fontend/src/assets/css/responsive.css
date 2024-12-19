@@ -1,10 +1,60 @@
 @media (max-width: 1366px) {
 }
 @media (max-width: 1200px) {
+  .spice-img {
+    max-width: 100%;
+  }
+  .contact-section {
+    padding: 50px 0;
+  }
+  .contact-section .section-title {
+    margin-top: 10px;
+  }
 }
 @media (max-width: 991px) {
   .checkoutContainer .shipping-btns {
     flex-direction: column;
+  }
+  .why-choose {
+    padding: 0 0 50px;
+  }
+  .innovation {
+    padding-top: 0px;
+    padding-bottom: 40px;
+  }
+  .innovation .container .inner {
+    padding: 50px 40px;
+  }
+  .spice-and-tradition .spice-right h3,
+  .innovation-left h3 {
+    font-size: 38px;
+    margin-top: 0px;
+  }
+  .page-header__title {
+    font-size: 55px;
+  }
+  .favorites {
+    padding: 50px 0;
+    background: var(--Paco-100, #f2e9d3);
+    margin-top: 50px;
+  }
+  .page-header__content {
+    padding: 20px 0 100px;
+  }
+  .chef-content {
+    padding: 50px 0;
+  }
+  .testimonials {
+    padding: 50px 0 50px 0;
+  }
+  .testimonials .sec-header {
+    margin-bottom: 20px;
+  }
+  .category {
+    padding: 50px 0;
+  }
+  .blog {
+    padding: 50px 0;
   }
 }
 @media (max-width: 575px) {
@@ -15,5 +65,35 @@
   }
   .innovation .container .inner {
     padding: 40px;
+  }
+  .page-header__title {
+    font-size: 30px;
+
+    line-height: 110%;
+  }
+  .main-header .thm-btn.main-header__btn {
+    display: none;
+  }
+  .banner-content {
+    padding-top: 10px;
+    padding-bottom: 200px;
+  }
+  .banner .banner-title {
+    font-size: 30px;
+  }
+  .banner .banner-desc {
+    font-size: 16px;
+  }
+  .banner .banner-desc br {
+    display: none;
+  }
+  .click-btn {
+    border-radius: 10px;
+    border: 1px solid var(--S1, #c86011);
+    background-color: transparent;
+    color: var(--S1, #c86011);
+    font-family: var(--theme-heading-font, "Nunito", sans-serif);
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

@@ -10,7 +10,7 @@ const CartPage = () => {
     <Layout>
       <Helmet>
         <meta charSet='utf-8' />
-        <title>Cart - New Dehices</title>
+        <title>Cart - New Delhices</title>
       </Helmet>
       <PageHeader subTitle='Cart' title='Cart' />
       <ShoppingCart />

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import Layout from "../Layout/Layout";
+
 import { Col, Container, Row } from "react-bootstrap";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRootContext } from "../../Provider/Context";
 
 import useAxiosPublic from "../../hooks/UseAxiosPublic";
+import toast from "react-hot-toast";
 
 const SignIn = () => {
   const [isPassVisible, setIsPassVisible] = useState(false);
@@ -22,10 +23,21 @@ const SignIn = () => {
     setShowSignUp,
     control,
     setControl,
+    toggleGuest,
+    guest,
+    guestInfo,
+    setGuestInfo,
+    orderDetails,
+    setOrderDetails,
+    setGuest,
   } = useRootContext();
+  const navigate = useNavigate();
 
   const axiosPublic = useAxiosPublic();
-
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setOrderDetails((prev) => ({ ...prev, [name]: value }));
+  };
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -37,13 +49,18 @@ const SignIn = () => {
       const res = await axiosPublic.post("/api/users/login", data, {
         withCredentials: true,
       });
-      console.log(res);
+
       if (res?.status === 200) {
         toggleSignIn();
         setControl(!control);
+        const user = res?.data;
+        localStorage.setItem("user", JSON.stringify(user));
+        e.target.reset();
       }
+      e.target.reset();
     } catch (error) {
       console.log(error);
+      toast.error(error?.response?.data?.msg || "Something went wrong");
     }
   };
   const handleSignUp = async (e) => {
@@ -68,10 +85,26 @@ const SignIn = () => {
       const res = await axiosPublic.post("/api/users", data, {
         withCredentials: true,
       });
-      console.log(res);
+
+      if (res.status === 201) {
+        toggleSignIn();
+        setControl(!control);
+        toast.success("SuccessFully SignUp");
+        const user = res?.data;
+        localStorage.setItem("user", JSON.stringify(user));
+        e.target.reset();
+      }
+      e.target.reset();
     } catch (error) {
       console.log(error);
+      toast.error(error.response.data.msg);
     }
+  };
+  const handleGuest = async (e) => {
+    e.preventDefault();
+    // Prevent form submission if passwords do not match
+
+    toggleSignIn();
   };
 
   // Handler for password fields to update state and validate match
@@ -104,28 +137,80 @@ const SignIn = () => {
       ></div>
 
       <div className='cart-popup__content'>
-        {showSignUp ? (
+        {guest ? (
           <div className='sign-in'>
             <div className='sign-in__container sign-up'>
-              <h5>I Am Not Yet Registered</h5>
+              <h5>guest</h5>
+
+              <form action='' onSubmit={handleGuest}>
+                <Row className='gy-20'>
+                  <Col md={12}>
+                    <input
+                      type='text'
+                      placeholder='Nom'
+                      name='name'
+                      onChange={handleChange}
+                    />
+                  </Col>
+
+                  <Col md={12}>
+                    <input
+                      type='number'
+                      placeholder='Téléphone'
+                      name='phone'
+                      onChange={handleChange}
+                    />
+                  </Col>
+                  <Col md={12}>
+                    <input
+                      type='email'
+                      placeholder='Adresse e-mail'
+                      name='email'
+                      onChange={handleChange}
+                    />
+                  </Col>
+                </Row>
+
+                <button
+                  className='thm-btn w-100'
+                  type='submit'
+                  disabled={confirmPassError}
+                >
+                  <b>Créer mon compte</b>
+                  <span></span>
+                </button>
+              </form>
+
+              <p className='text-center'>
+                Vous avez déjà un compte ?{" "}
+                <Link to='#' onClick={toggleSignUp}>
+                  {showSignUp ? "Se connecter" : "Inscrivez-vous"}
+                </Link>
+              </p>
+            </div>
+          </div>
+        ) : showSignUp ? (
+          <div className='sign-in'>
+            <div className='sign-in__container sign-up'>
+              <h5>Je ne suis pas encore inscrit</h5>
               <form action='' onSubmit={handleSignUp}>
                 <Row className='gy-20'>
                   <Col md={6}>
-                    <input
-                      type='text'
-                      placeholder='First Name'
-                      name='firstName'
-                    />
+                    <input type='text' placeholder='Prénom' name='firstName' />
                   </Col>
                   <Col md={6}>
                     <input
                       type='text'
-                      placeholder='Last Name'
+                      placeholder='Nom de famille'
                       name='lastName'
                     />
                   </Col>
                   <Col md={6}>
-                    <input type='number' placeholder='Number' name='number' />
+                    <input
+                      type='number'
+                      placeholder='Téléphone'
+                      name='number'
+                    />
                   </Col>
                   <Col md={6}>
                     <input
@@ -137,13 +222,13 @@ const SignIn = () => {
                   <Col sm={12}>
                     <div className='password'>
                       <input
-                        type={isPassVisible ? "password" : "text"}
-                        placeholder='password'
+                        type={!isPassVisible ? "password" : "text"}
+                        placeholder='Mot de passe'
                         name='password'
                         onChange={handlePasswordChange}
                       />
                       <span onClick={() => setIsPassVisible(!isPassVisible)}>
-                        {isPassVisible ? (
+                        {!isPassVisible ? (
                           <IoIosEye size={25} />
                         ) : (
                           <IoIosEyeOff size={25} />
@@ -154,8 +239,8 @@ const SignIn = () => {
                   <Col sm={12}>
                     <div className='password'>
                       <input
-                        type={isConfirmPassVisible ? "password" : "text"}
-                        placeholder='confirm password'
+                        type={!isConfirmPassVisible ? "password" : "text"}
+                        placeholder='Confirmer mot de passe'
                         onChange={handleConfirmPasswordChange}
                       />
                       <span
@@ -163,7 +248,7 @@ const SignIn = () => {
                           setIsConfirmPassVisible(!isConfirmPassVisible)
                         }
                       >
-                        {isConfirmPassVisible ? (
+                        {!isConfirmPassVisible ? (
                           <IoIosEye size={25} />
                         ) : (
                           <IoIosEyeOff size={25} />
@@ -184,14 +269,21 @@ const SignIn = () => {
                   type='submit'
                   disabled={confirmPassError}
                 >
-                  <b>Sign Up</b>
+                  <b>Créer mon compte</b>
                   <span></span>
                 </button>
               </form>
               <p className='text-center'>
-                You already have an account?{" "}
+                Vous avez déjà un compte ?{" "}
                 <Link to='#' onClick={toggleSignUp}>
-                  Sign In
+                  Se connecter
+                </Link>
+              </p>
+              <p className='text-center m-0 ou'>ou</p>
+              <p className='text-center m-0'>
+                Sans connexion{" "}
+                <Link to='#' onClick={toggleGuest}>
+                  Utilisateur invité
                 </Link>
               </p>
             </div>
@@ -199,7 +291,7 @@ const SignIn = () => {
         ) : (
           <div className='sign-in'>
             <div className='sign-in__container'>
-              <h5>I Am Already A Customer</h5>
+              <h5>Je Suis Deja Client</h5>
               <form action='' onSubmit={handleLogin}>
                 <Row className='gy-20'>
                   <Col sm={12}>
@@ -212,12 +304,12 @@ const SignIn = () => {
                   <Col sm={12}>
                     <div className='password'>
                       <input
-                        type={isPassVisible ? "password" : "text"}
-                        placeholder='password'
+                        type={!isPassVisible ? "password" : "text"}
+                        placeholder='Mot de passe'
                         name='password'
                       />
                       <span onClick={() => setIsPassVisible(!isPassVisible)}>
-                        {isPassVisible ? (
+                        {!isPassVisible ? (
                           <IoIosEye size={25} />
                         ) : (
                           <IoIosEyeOff size={25} />
@@ -227,23 +319,22 @@ const SignIn = () => {
                   </Col>
                 </Row>
 
-                <div className='d-flex justify-content-between mt-2'>
-                  <div>
-                    <input type='checkbox' name='' id='remember' />
-
-                    <label htmlFor='remember'>Remember me</label>
-                  </div>
-                  <Link to='#'>forgot password</Link>
-                </div>
                 <button className='thm-btn w-100' type='submit'>
-                  <b>Login</b>
+                  <b>Se connecter</b>
                   <span></span>
                 </button>
               </form>
               <p className='text-center'>
-                You have no account?{" "}
+                Vous n&apos;avez pas de compte ?{" "}
                 <Link to='#' onClick={toggleSignUp}>
-                  Sign Up
+                  Inscrivez-vous
+                </Link>
+              </p>
+              <p className='text-center m-0 ou'>ou</p>
+              <p className='text-center m-0'>
+                Sans connexion{" "}
+                <Link to='#' onClick={toggleGuest}>
+                  Utilisateur invité
                 </Link>
               </p>
             </div>

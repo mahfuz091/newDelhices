@@ -8,18 +8,20 @@ const MeetOurChef = () => {
         <Row>
           <Col lg={6}>
             <div className='chef-content'>
-              <h2 className='section-title'>Meet Our Special Chef</h2>
+              <h2 className='section-title'>Rencontrez notre chef spécial</h2>
               <p className='section-desc'>
-                “I had the pleasure of dining at Foodi last night, and I&apos;m
-                still raving about the experience! The attention to detail in
-                presentation and service was impeccable I had the pleasure of
-                dining at Foodi last night, and I&apos;m still raving about the
-                experience! The attention to detail in presentation and service
-                was impeccable I had the pleasure of dining at Foodi last night,
-                and I&apos;m still raving about the experience! The attention to
-                detail in presentation and service was impeccableand I&apos;m
-                still raving about the experience! The attention to detail in
-                presentation and service was impeccable””
+                “ J&apos;ai eu le plaisir de dîner chez Foodi hier soir, et je
+                suis encore ravi de cette expérience ! L&apos;attention portée
+                aux détails dans la présentation et le service était impeccable
+                J&apos;ai eu le plaisir de dîner chez Foodi hier soir, et je
+                suis encore ravi de cette expérience ! L&apos;attention portée
+                aux détails dans la présentation et le service était impeccable
+                J&apos;ai eu le plaisir de dîner chez Foodi hier soir, et je
+                suis encore ravi de cette expérience ! L&apos;attention portée
+                aux détails dans la présentation et le service était impeccable
+                et je suis encore ravi de cette expérience ! L&apos;attention
+                portée aux détails dans la présentation et le service était
+                impeccable ””
               </p>
               <div className='chef-meta__author'>
                 <h5 className='chef-meta__author--name'>Henry Laboo</h5>

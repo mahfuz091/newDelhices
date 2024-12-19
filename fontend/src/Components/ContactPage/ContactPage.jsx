@@ -10,7 +10,7 @@ const ContactPage = () => {
     <Layout>
       <Helmet>
         <meta charSet='utf-8' />
-        <title>Contact - New Dehices</title>
+        <title>Contact - New Delhices</title>
       </Helmet>
       <Contact />
     </Layout>
